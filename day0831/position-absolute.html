@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>absolute</title>
+  <style>
+    h1{
+      border: 1px solid gray;
+    }
+    /* absolute: 자신이 속한 가장  가까운 조상(static 제외)을 기준으로 그 안에서 배치가 됨 */
+    /* 부모 */
+    #div1{
+      background-color: lightblue;
+      top: 100px;
+      left: 100px;
+      position: relative;
+      font-weight: bold;
+      color: white;
+      width: 300px;
+      height: 300px;
+    }
+
+    /* 자식들 */
+    #div2{
+      background-color: lightcoral;
+      bottom: 0px;
+      right: 0px;
+      font-weight: bold;
+      color: white;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+
+    #div3{
+      background-color: lightgoldenrodyellow;
+      top: 50px;
+      left: 50px;
+      font-weight: bold;
+      color: gray;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>absolute test</h1>
+  <div id="div1">div1
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+  </div>
+</body>
+</html>
