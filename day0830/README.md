@@ -104,11 +104,81 @@
   - 시작 tag만 있는 경우 : \<br/\>, \<hr/\>, \<img/\>, ...
 - 각각의 tag는 속성과 속성의 값이 존재한다.
 - HTML tag에는 어느 tag에나 넣어서 사용할 수 있는 글로벌속성(global attribute)이 있다.
+- 
 |글로벌 속성|설명|
-|!----|!----|
+|:----|:----|
 |class|tag에 적용할 스타일의 이름을 지정<br>ex)\<div class="content"\>...\</div\>|
-|div|내용의 텍스트 방향을 지정. 왼쪽 >> 오른쪽(기본값, ltr), 오른쪽 >> 왼쪽(rtl)|
+|dir|내용의 텍스트 방향을 지정. 왼쪽 >> 오른쪽(기본값, ltr), 오른쪽 >> 왼쪽(rtl)<br>왼쪽 또는 오른쪽 정렬과 비슷한 형태로 표현<|
+|id|tag에 유일한 ID를 지정함. 자바스크립트에서 주로 사용.<br>ex)\<input type="text" id="userid"\>|
+|style|인라인 스타일을 적용하기 위해 사용<br>ex)\<p style="color: red; text-align: center;"\>빨간색 가운데</p>|
+|title|tag에 추가 정보를 지정. tag에 마우스 포인터를 위치시킬 경우 title의 값 표시<br>ex)\<p\>\<abbr title="Web Application Server"\>WAS\</abbr\>는...\</p\>|
+
+## 주석
+- 주석의 내용은 브라우저에 출력이 되지 않는다.
+- HTML tag의 내용을 설명하기 위한 용도로 사용
+
+## Root 요소
+- \<html\> tag는 HTML 문서 전체를 정의
+- Head(\<head\> ... \</head\>)와 Body(\<body\> ... \</body\>)로 구성.
+
+## Head 요소 - 문서 머리글(head), 제목(title)
+- \<head\> tag는 브라우저에게 HTML 문서의 머리 부분임을 인식
+- \<title\>, \<meta\>, \<style\>, \<script\>, \<link\> tag를 포함 가능.
+- \<title\> tag는 문서의 제목을 의미, 브라우저의 제목 표시줄에 tag 내용이 나타남
+- \<title\> tag 이외의 다른 tag로 표현한 정보는 화면에 출력 x
+
+## Head 요소 - 메타 데이터(meta)
+- 문서의 작성자, 날짜, 키워드 등 브라우저의 본문에 나타나지 않는 일반 정보를 나타냄
+- name과 content 속성을 이용하여 다양한 정보를 나타냄
+- http-equiv 속성을 이용하여 인코딩 설정 및 문서 이동, 새로 고침이 가능
+- charset 속성을 이용하여 문서의 인코딩 정보를 설정
+
+## Body 요소 - body
+- Web Browser에 보여질 문서의 내용을 작성
+- \<head\> tag 다음에 위치하고 \<head\> 내부에 위치하는 tag와 \<html\>을 제외한 모든 tag
+- id 속성을 이용하여 문서 내에서 tag를 유일하게 식별 가능.(id속성은 중복x)
+- class 속성을 이용하여 여러 tag에 공통적인 특성(CSS)을 부여.(class속성은 중복o)
+
+## Body 요소 - heading
+- 문단의 제목을 지정할 때 사용. \<h1\>부터 \<h6\>까지 구분. 숫자가 커질수록 글자는 작아짐
+- \<section\> tag를 이용하면 같은 tag를 서로 다르게 표현
+- 문서 구조를 \<section\> tag를 이용하여 구분하면 각 문단의 제목을 하나의 tag로 작성 가능
+
+## 특수문자
+|엔티티 이름|설명|화면출력|
+|:--:|:--|:--:|
+|\&nbsp;|Non-breaking space(공백)||
+|\&lt;|Less than|<|
+|\&gt;|Greater than|>|
+|\&amp;|Ampersand|&|
+|\&quot;|Quotation mark|"|
+|\&copy;|Copyright|&copy;|
+|\&reg;|registered trademark|&reg;|
+
 # HTML5 Markup Elements
+## 포맷팅 요소
+- 포맷팅 요소에는 화면에는 동일하게 출력되지만 각 요소가 가진 의미가 다른 것이 있다.
+- 예를 들면, \<b\>, \<strong\>은 모두 텍스트를 굵게 표현하지만, \<strong\>요소는 텍스트를 강조
+|tag 명|설명|
+|:--:|:--|
+|\<abbr\>|생략된 약어 표시. Title 속성을 함께 사용|
+|\<address\>|연락처 정보 표시.|
+|\<blockquote\>|긴 인용문구 표시, 좌우로 들여쓰기가 됨.|
+|\<q\>|짧은 인용문구 표시, 좌우로 따옴표가 붙음.|
+|\<cite\>|웹 문서나 포스트에서 참고 내용 표시.|
+|\<pre\>|공백, 줄 바꿈등 입력된 그대로 화면에 표시.|
+|\<code\>|컴퓨터 인식을 위한 소스 코드.|
+|\<mark\>|특정 문자열을 강조. 화면에는 하이라이팅 됨.|
+|\<hr\>|구분선.|
+|\<b\>, \<strong\>|굵은 글씨로 표히, 특정 문자열을 강조(\<strong\>)|
+|\<i\>, \<em\>|이탤릭(기울게) 표시, 특정 문자열을 강조(\<em\>)|
+|\<big\>, \<small\>|큰 글자, 작은 글자로 표시.|
+|\<sup\>, \<sub\>|위 첨자, 아래 첨자로 표시.|
+|\<s\>, \<u\>|취소선, 밑줄|
+
+## 목록형 요소 - 개요
+-
+
 # CSS3 기본
 # CSS3 이해
 # Semantic
