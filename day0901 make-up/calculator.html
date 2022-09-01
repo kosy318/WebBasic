@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #calc {
+        width: fit-content;
+        padding: 10px;
+        border: 1px solid black;
+      }
+
+      .clear::after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+
+      #pad > div > button {
+        float: left;
+        width: 70px;
+        height: 70px;
+      }
+
+      #formula {
+        width: fit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calc">
+      <input type="text" , id="formula" value="" placeholder="0.0" readonly />
+      <div id="pad">
+        <div class="clear">
+          <button class="float-left" onclick="addNum(7)">7</button>
+          <button class="float-left" onclick="addNum(8)">8</button>
+          <button class="float-left" onclick="addNum(9)">9</button>
+          <button class="float-left" onclick="addOper('+')">+</button>
+        </div>
+        <div class="clear">
+          <button class="float-left" onclick="addNum(4)">4</button>
+          <button class="float-left" onclick="addNum(5)">5</button>
+          <button class="float-left" onclick="addNum(6)">6</button>
+          <button class="float-left" onclick="addOper('-')">-</button>
+        </div>
+        <div class="clear">
+          <button class="float-left" onclick="addNum(1)">1</button>
+          <button class="float-left" onclick="addNum(2)">2</button>
+          <button class="float-left" onclick="addNum(3)">3</button>
+          <button class="float-left" onclick="addOper('*')">x</button>
+        </div>
+        <div class="clear">
+          <button class="float-left" onclick="addNum(0)">0</button>
+          <button class="float-left" onclick="reset()">CE</button>
+          <button class="float-left" onclick="calc()">=</button>
+          <button class="float-left" onclick="addOper('/')">/</button>
+        </div>
+      </div>
+      <div id="resultDiv">
+        <h2>결과이력</h2>
+        <p id="result"></p>
+      </div>
+    </div>
+
+    <script>
+      let preIsNum = false;
+      let formula = document.getElementById("formula");
+
+      let addNum = function (n) {
+        if (formula.value == "" && n == 0) {
+          return;
+        }
+
+        formula.value += n;
+        preIsNum = true;
+      };
+
+      let addOper = function (n) {
+        if (!preIsNum) {
+          return;
+        }
+
+        formula.value += n;
+        preIsNum = false;
+      };
+
+      let count = 0;
+      let calc = function () {
+        if (preIsNum == false || formula.value=="") {
+          return;
+        }
+
+        let result = document.getElementById("result");
+        eval_result = "ERROR";
+        result.innerHTML += ++count + ". " + formula.value + "=" + eval(formula.value) + "<br>";
+        formula.value = "";
+      };
+
+      let reset = function () {
+        formula.value = "";
+      };
+    </script>
+  </body>
+</html>
