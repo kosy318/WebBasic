@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style></style>
-        <script>
-            /* 1. 리터럴 형식의 객체 생성 방법
-            클래스 선언과 동시에 객체 생성하는 방식. 한번에 객체 하나씩만 생성 가능함.
-            주용도 : 여러개의 데이터를 하나로 포장하는 경우에 사용 
-            key(name): value 구조로 표현*/
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script>
+      /* 1. 리터럴 형식의 객체 생성 방법
+        클래스 선언과 동시에 객체 생성하는 방식. 한번에 객체 하나씩만 생성 가능함.
+        주용도 : 여러개의 데이터를 하나로 포장하는 경우에 사용 
+        key(name): value 구조로 표현*/
 
-            var user = {
-                num: "123",
-                name: "홍길동",
-                address: "한국",
+      var user = {
+        num: "123",
+        name: "홍길동",
+        address: "한국",
 
-                getNum: function () {
-                    document.write("num: " + this.num + "<br>"); // browser 출력
-                },
-                getName: function () {
-                    document.write("name: " + this.name + "<br>");
-                },
-                getAddress() {
-                    document.write("address: " + this.address + "<br>");
-                },
-            };
+        getNum: function () {
+          document.write("num: " + this.num + "<br>"); // browser 출력
+        },
+        getName: function () {
+          document.write("name: " + this.name + "<br>");
+        },
+        getAddress() {
+          document.write("address: " + this.address + "<br>");
+        },
+      };
 
-            user.getNum();
-            user.getName();
-            user.getAddress();
-            document.write(user.name + "<br>");
-            document.write(user["name"]);
+      user.getNum();
+      user.getName();
+      user.getAddress();
+      document.write(user.name + "<br>");
+      document.write(user["name"]);
 
-            for (const key in user) {
-                console.log(key + ": " + user[key]);
-            }
-        </script>
-    </head>
-    <body></body>
+      for (const key in user) {
+        console.log(key + ": " + user[key]);
+      }
+    </script>
+  </head>
+  <body></body>
 </html>
