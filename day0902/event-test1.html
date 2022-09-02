@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="head">Event Test</h1>
+  <input type="button" value="click" id="first">
+  <input type="button" value="mouseover" onmouseover="handleEvent(2)">
+  <input type="button" value="open" onclick="handleEvent(3)">
+  <input type="button" value="print" onclick="handleEvent(4)">
+  <input type="button" value="close" onclick="handleEvent(5)">
+
+  <script>
+    let handleEvent = function(code){
+      switch(code){
+        case 1:
+          alert("mouse clicked!");
+          break;
+        case 2:
+          alert("mouseover!");
+          break;
+        case 3: // pop up 창 열기
+          open("http://www.daum.net", "", "width=300px, height=300px, scrollbars=yes")
+          break;
+        case 4:
+          print();
+          break;
+        case 5:
+          close();
+          break;
+        default:
+          alert("error");
+          break;
+      }
+    }
+
+    let f = document.getElementById("first");
+    // f에 이벤트 핸들러 등록
+    f.addEventListener('click', changeColor);
+
+    function changeColor(){
+      let h = document.getElementById("head");
+      h.style.color = "red"; // js에서 css 조정할 때 style이라는 값으로 지정
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>Login</h1>
+    <form id="f">
+      <div style="width: 40px; display: inline-block">ID: </div><input type="text" name="id" id="id"><br>
+      <div style="width: 40px; display: inline-block">PW: </div><input type="password" name="pw" id="pw"><br>
+      <input type="button" value="send" onclick="checkValue()">
+    </form>
+  </div>
+
+  <script>
+    let checkValue = function(){
+      // 1. 사용자가 입력한 id, pw 알아내기
+      let id = document.getElementById("id");
+      let pw = document.getElementById("pw");
+
+      // 2. 알아낸 값이 빈 문자열인지 체크해서 경고창 띄우기
+      if(id.value == ""){
+        alert("id를 입력해 주세요");
+        return;
+      }
+      if(pw.value == ""){
+        alert("password를 입력해 주세요");
+        return;
+      }
+
+      // 3. 조건에 다 맞으면 서버로 폼 전송하기
+      let form = document.getElementById("f");
+      form.action = "welcome.html";
+      form.submit(); // 전송
+    }
+  </script>
+</body>
+</html>

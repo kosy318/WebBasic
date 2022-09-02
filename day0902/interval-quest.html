@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="time"></p>
+  <button onclick="stopWork()">stop</button>
+
+  <script>
+    let stopWork = function(){
+      clearInterval(t); // 반복작업(setInterval) t를 멈춤
+    }
+
+    let showTime = function(){
+      // let time = new Date(); // 이 문장이 실행되는 시점에서 시간, 날짜 정보를 가져옴
+      // console.log(time);
+      document.getElementById("time").innerHTML = new Date();
+    }
+
+    // 일정 시간 간경으로 함수를 반복 실행함
+    let t = setInterval(showTime, 1000); // 1초 간격으로 showTime 실행
+  </script>
+</body>
+</html>

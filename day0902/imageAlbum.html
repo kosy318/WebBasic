@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <style>
+      .alert-text {
+        opacity: 0;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 100;
+      }
+
+      .fadeInOut-text {
+        animation-duration: 2s;
+        animation-name: fadeInOut;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin-top: 100px; text-align: center">
+      <p style="text-align: center"><span id="now">1</span>/<span id="total"></span></p>
+      <img src="images/movie01.jpg" id="pic" />
+      <h1 class="alert-text" id="first-image">처음 이미지 입니다.</h1>
+      <h1 class="alert-text" id="last-image">마지막 이미지 입니다.</h1>
+      <form name="menu">
+        <input
+          type="button"
+          value="<<backward"
+          onClick="backward()"
+          style="background-color: white; border: none"
+        />
+        <input
+          type="button"
+          value="first"
+          onclick="firstMovie()"
+          style="background-color: white; border: none"
+        />
+        <input
+          type="button"
+          value="last"
+          onclick="lastMovie()"
+          style="background-color: white; border: none"
+        />
+        <input
+          type="button"
+          value="forward>>"
+          name="forw"
+          onClick="forward()"
+          style="background-color: white; border: none"
+        />
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      let photos = new Array();
+      let index = 0; //현재보여지고 있는 이미지의 인덱스
+      let pic;
+
+      /*보여줄 이미지들을 배열에 저장*/
+      photos[0] = "images/movie01.jpg";
+      photos[1] = "images/movie02.jpg";
+      photos[2] = "images/movie03.jpg";
+      photos[3] = "images/movie04.jpg";
+      photos[4] = "images/movie05.jpg";
+      photos[5] = "images/movie06.jpg";
+      photos[6] = "images/movie07.jpg";
+
+      document.getElementById("total").innerHTML = photos.length;
+
+      let reset = function (str) {
+        document.getElementById(str).classList.remove("fadeInOut-text");
+      };
+
+      function backward() {
+        if (index == 0) {
+          // alert("처음 이미지 입니다.");
+          document.getElementById("first-image").classList.add("fadeInOut-text");
+          setTimeout(function () {
+            reset("first-image");
+          }, 2000);
+          return;
+        }
+        index -= 1;
+        document.getElementById("now").innerHTML = index + 1;
+        document.getElementById("pic").src = photos[index];
+      }
+
+      function forward() {
+        if (index == photos.length - 1) {
+          // alert("마지막 이미지 입니다.");
+          document.getElementById("last-image").classList.add("fadeInOut-text");
+          setTimeout(function () {
+            reset("last-image");
+          }, 2000);
+          return;
+        }
+        index += 1;
+        document.getElementById("now").innerHTML = index + 1;
+        document.getElementById("pic").src = photos[index];
+      }
+
+      function firstMovie() {
+        index = 0;
+        document.getElementById("now").innerHTML = index + 1;
+        document.getElementById("pic").src = photos[index];
+      }
+
+      function lastMovie() {
+        index = photos.length - 1;
+        document.getElementById("now").innerHTML = index + 1;
+        document.getElementById("pic").src = photos[index];
+      }
+    </script>
+  </body>
+</html>

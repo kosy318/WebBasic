@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      function process(address) {
+        let address_list = address.split(" ");
+        console.log(address_list);
+        let addr1 = opener.document.getElementById("addr1");
+        addr1.disabled = false;
+        addr1.value = address_list[0];
+        let addr2 = opener.document.getElementById("addr2");
+        addr2.disabled = false;
+        addr2.value = address_list.slice(1).join(" ");
+        self.close();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>주소 찾기</h1>
+    <a href="#" id="12345 서울시 서초구" onclick="process(this.id)">12345 서울시 서초구</a><br />
+    <a href="#" id="12367 서울시 종로구" onclick="process(this.id)">12367 서울시 종로구</a><br />
+    <a href="#" id="14560 서울시 영등포구" onclick="process(this.id)">14560 서울시 영등포구</a
+    ><br />
+  </body>
+</html>
