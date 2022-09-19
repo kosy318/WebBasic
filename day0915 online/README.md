@@ -66,6 +66,35 @@ img 삽입
 
 # Servlet Parameter 처리
 
+<table>
+<thead>
+<tr>
+<td></td>
+<td>GET</td>
+<td>POST</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>특징</td>
+<td>전송되는 데이터가 URL 뒤에 Query String으로 전달.<br>입력 값이 적은 경우나 데이터가 노출이 돼도 문제가 없을 경우 사용.</td>
+<td>URL과 별도로 전송.<br>HTTP header 뒤 body에 입력 스트림 데이터로 전달.</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>간단한 데이터를 빠르게 전송.<br>form tag뿐만 아니라 직접 URL에 입력하여 전송 가능.</td>
+<td>데이터의 제한이 없다.<br>최소한의 보안 유지 효과를 볼 수 있다.</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>데이터 양에 제한이 있다.<br>(location bar(URL+parameters)를 통해 전송할 수 있는 데이터의 사이즈는 2kb(2048byte)로 제한된다.</td>
+<td>전달 데이터의 양이 같을 경우 GET방식보다 느리다.<br>전송 패킷을 body에 데이터를 구성해야 하므로)</td>
+</tr>
+</tbody>
+</table>
+
+img 삽입
+
 # JSP(Java Server Page)
 
 # JSP Scriptlet
