@@ -28,7 +28,16 @@
 - jsp페이지와 관련된 속성(정보)을 정의하고 이 속성들을 웹 컨테이너에 전달하는 지시어
 - 웹 컨테이너가 jsp를 서블릿으로 변환할 때 이 정보들을 참조함
 
+### include 지시어
+- <%@ include file="in.jsp" %>
+- 외부 데이터(html 문서, jsp 페이지)를 jsp페이지에 포함시키기 위해 사용하는 지시어
+
 ## Scripting Element
+1. 선언(Declaration)
+2. 식(Expression)
+3. 스크립트렛(scriptlet)
+4. 식언어(EL: Expression Language)
+
 ### 1. 선언(Declaration)
 - jsp의 멤버필드나 메소드 선언 시 사용
   ```jsp
@@ -80,7 +89,7 @@
   </jsp:forward>
   ```
 
-### include 태그
+### include 지시어/태그
 - 현재의 jsp페이지에 동적으로 다른 자원을 포함시킴
 - 지시어 include : 복붙한 상태와 비슷, 정적인 include 
   ```jsp
