@@ -1,6 +1,6 @@
 # WebArchitecture
 
-img 삽입
+<img src="https://user-images.githubusercontent.com/77595685/191090110-4e7726df-9533-49b9-8656-2d312631e0c1.png" style="width:800px;">
 
 ### project 생성
 
@@ -31,7 +31,7 @@ Client가 요청(request)을 하게 되면 Servlet Container는 Servlet객체를
 
 ### Servlet Life-Cycle의 주요 method
 
-img 삽입
+<img src="https://user-images.githubusercontent.com/77595685/191090246-89d6c31a-a8b1-4772-b8f9-501a575c07c5.png" style="width:400px;">
 
 <table>
 <thead>
@@ -93,7 +93,7 @@ img 삽입
 </tbody>
 </table>
 
-img 삽입
+<img src="https://user-images.githubusercontent.com/77595685/191090476-0d05a885-9229-443c-b607-ee5fc30e85a3.png" style="width:700px;">
 
 # JSP(Java Server Page)
 
