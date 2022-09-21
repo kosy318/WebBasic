@@ -9,4 +9,5 @@ public interface BoardService {
 	ArrayList<Board> selectAll(); // 모든 레코드 검색
 	Board selectOne(String num); // 해당 번호의 레코드 검색
 	void insert(Board b); // 새 레코드 추가
+	void delete(String num); // 레코드 삭제
 }
