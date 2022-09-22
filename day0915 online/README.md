@@ -104,7 +104,7 @@ Client가 요청(request)을 하게 되면 Servlet Container는 Servlet객체를
 <br>
 compile 기반 언어의 특징(속도가 빠름) + Interpreter 언어의 특징(코딩하기에 편리)
 
-img 삽입
+<img src="https://user-images.githubusercontent.com/77595685/191690228-737f290b-80c1-4233-8ea2-6e034b674029.png" style="width:1000px;"/>
 
 # JSP Scriptlet
 
