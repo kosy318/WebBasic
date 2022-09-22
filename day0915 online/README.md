@@ -97,8 +97,56 @@ Client가 요청(request)을 하게 되면 Servlet Container는 Servlet객체를
 
 # JSP(Java Server Page)
 
+<a href=""><b>hellojsp</b></a>
+
+자바 서버 페이지는 HTML 내에 자바 코드를 삽입하여 웹 서버에서 동적으로 웹페이지를 생성하여 웹브라우저에 돌려주는 언어입니다. Java EE 스펙 중 일부로 웹 애플리케이션 서버에서 동작한다. 자바 서버 페이지는 실행시에는 자바 서블릿으로 변환된 후 실행되므로 서블릿과 거의 유사하다고 볼 수 있다. 하지만 서블릿과 달리 HTML 표준에 다라 작성되므로 웹 디자인하기에 편하다. 이와 비슷한 구조로 PHP, ASP, ASP.NET등이 있다.<br>
+아파치 스트럿츠나 자카르타 프로젝트의 JSTL 등의 JSP 태그 라이브러리를 사용하는 경우에는 자바 코딩없이 태그만으로 간략히 기술이 가능하므로 생산성을 높일 수 있다.
+<br>
+compile 기반 언어의 특징(속도가 빠름) + Interpreter 언어의 특징(코딩하기에 편리)
+
+img 삽입
+
 # JSP Scriptlet
+
+## JSP 스크립팅 요소(Scripting Element)
+
+### 선언(Declaration)
+
+멤버 변수 선언이나 메쇄드를 선언하는 영역
+
+```jsp
+<%! 멤버 변수 선언과 method 작성 %>
+```
+
+### 스크립트릿(Scriptlet)
+
+Client 요청 시 매번 호출 영역으로, Servlet으로 변호나 시 service() method에 해당되는 영역. request, response에 관련된 코대ㅡ 구현.
+
+```jsp
+<% java code %>
+```
+
+### 표현식(Expression)
+
+데이터를 브라우저에 출력할 때 사용<br>
+주의) 문자열 뒤 세미콜론은 작석x
+
+```jsp
+<%= 문자열 %>
+```
+
+### 주석(Comment)
+
+코드 상에서 부가 설명을 작성
+
+```jsp
+<%-- 주석할 code --%>
+```
 
 # JSP Directive
 
+<a href=""><b>board2_jsp</b></a>
+
 # JSP 기본객체
+
+## 추가 정리 필요!!!!
